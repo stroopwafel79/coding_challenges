@@ -3,4 +3,7 @@ starting on pg 55
 
 VI1. O(n)
 VI2. O(b)
-VI3. 
+VI3. O(1)
+4. O(a)
+5. O(logn)
+6. O(sqrt(n))
