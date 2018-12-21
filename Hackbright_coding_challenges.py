@@ -46,3 +46,9 @@ def is_anagram_of_palindrome(string):
         return False
     
     return True
+
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
