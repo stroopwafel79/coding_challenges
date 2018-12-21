@@ -1,4 +1,4 @@
-# Is the word an anagram of a palindrome?
+#############Is the word an anagram of a palindrome?
 # A palindrome is a word that reads the same forward and backwards 
 # (eg, “racecar”, “tacocat”). An anagram is a rescrambling of a word (eg for “racecar”, you could rescramble this as “arceace”).
 # Determine if the given word is a re-scrambling of a palindrome.
@@ -13,27 +13,27 @@ def make_dict(s):
     return letter_dict
 
 
-def is_anagram_of_palindrome(string):
-	""" Take in a string and determine if it is an anagram of a palindrome.
+def is_anagram_of_palindrome(s):
+    """ Take in a string and determine if it is an anagram of a palindrome.
 
-	>>> is_anagram_of_palindrome("a")
-	True
+    >>> is_anagram_of_palindrome("a")
+    True
 
-	>>> is_anagram_of_palindrome("ab")
-	False
+    >>> is_anagram_of_palindrome("ab")
+    False
 
-	>>> is_anagram_of_palindrome("aab")
-	True
+    >>> is_anagram_of_palindrome("aab")
+    True
 
-	>>> is_anagram_of_palindrome("arceace")
-	True
+    >>> is_anagram_of_palindrome("arceace")
+    True
 
-	>>> is_anagram_of_palindrome("arceaceb")
-	False
-	"""
+    >>> is_anagram_of_palindrome("arceaceb")
+    False
+    """
 
-	# Only one letter is allowed to be odd.
-	    
+    # Only one letter is allowed to be odd.
+        
     d = make_dict(s)
     
     num_odd = 0
@@ -51,4 +51,10 @@ def is_anagram_of_palindrome(string):
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
+    
+    result = doctest.testmod()
+    if result.failed == 0:
+        print("ALL TESTS PASSED")
+
+
+##############
