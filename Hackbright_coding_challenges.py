@@ -61,10 +61,9 @@ def count_recursively(lst):
 
     if lst == []:
         return 0
-    print(lst)
+    
     lst.pop()
-    print(lst)
-    return count_recursively(lst)
+    return count_recursively(lst) + 1
 
 
 
