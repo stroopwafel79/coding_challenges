@@ -47,18 +47,7 @@ def is_anagram_of_palindrome(s):
     
     return True
 
-
-
-if __name__ == "__main__":
-    import doctest
-    
-    result = doctest.testmod()
-    if result.failed == 0:
-        print("ALL TESTS PASSED")
-
-
-##############
-#Count List Recursively
+#########Count List Recursively
 
 def count_recursively(lst):
     """Return number of items in a list, using recursion.
@@ -69,3 +58,22 @@ def count_recursively(lst):
     >>> count_recursively([1, 2, 3])
     3
     """
+
+    if lst == []:
+        return 0
+    print(lst)
+    lst.pop()
+    print(lst)
+    return count_recursively(lst)
+
+
+
+if __name__ == "__main__":
+    import doctest
+    
+    result = doctest.testmod()
+    if result.failed == 0:
+        print("ALL TESTS PASSED")
+
+
+
