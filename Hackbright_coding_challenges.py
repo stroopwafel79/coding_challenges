@@ -58,3 +58,14 @@ if __name__ == "__main__":
 
 
 ##############
+#Count List Recursively
+
+def count_recursively(lst):
+    """Return number of items in a list, using recursion.
+
+    >>> count_recursively([])
+    0
+
+    >>> count_recursively([1, 2, 3])
+    3
+    """
