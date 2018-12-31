@@ -66,6 +66,47 @@ def count_recursively(lst):
     return count_recursively(lst) + 1
 
 
+#########Binary Search
+
+def binary_search(val):
+    """Using binary search, find val in range 1-100. Return # of guesses.
+    >>> binary_search(50)
+    1
+
+    >>> binary_search(25)
+    2
+
+    >>> binary_search(75)
+    2
+
+    >>> binary_search(31) <= 7
+    True
+
+    >>> max([binary_search(i) for i in range(1, 101)])
+    7
+    """
+    assert 0 < val < 101, "Val must be between 1-100"
+
+    num_guesses = 0
+
+    too_low = 0
+    too_high = 101
+    guess = None
+
+    while val != guess:
+        guess = int((too_high - too_low) / 2) + too_low
+        num_guesses += 1
+
+
+        if guess > val:
+            too_high = guess
+
+        if guess < val:
+            too_low = guess
+        
+    return num_guesses
+
+
 
 if __name__ == "__main__":
     import doctest
