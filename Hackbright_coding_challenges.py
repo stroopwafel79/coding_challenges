@@ -143,6 +143,7 @@ def decode(s):
     for i in range(len(s)):
         if s[i].isdigit():
             print("s[i]:", s[i])
+            print(s[i].isdigit())
             new_string += s[int(s[i]) + 1]
             print("new_string:", new_string)
 
