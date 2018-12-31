@@ -106,6 +106,47 @@ def binary_search(val):
         
     return num_guesses
 
+#########Decode a string
+
+# In this challenge, you’ll write a decoder.
+
+# A valid code is a sequence of numbers and letters, always starting with a number 
+# and ending with letter(s).
+
+# Each number tells you how many characters to skip before finding a good letter. 
+#After each good letter should come the next next number.
+
+# For example, the string “hey” could be encoded by “0h1ae2bcy”. This means “skip 0, 
+#find the ‘h’, skip 1, find the ‘e’, skip 2, find the ‘y’”.
+
+# A single letter should work:
+
+def decode(s):
+    """Decode a string(s). A valid code is a sequence of numbers and letters, 
+       always starting with a number and ending with letter(s).
+       Each number tells you how many characters to skip before finding a 
+       good letter. After each good letter should come the next next number.
+
+    >>> decode("0h")
+    'h'
+    >>> decode("2abh")
+    'h'
+    >>> decode("0h1ae2bcy")
+    'hey'
+    """
+    # Loop through string via indexs.
+    # First check if value @ index is a number.
+    # If so, skip that many places.
+    # Add index at number + number to get index of letter.
+    new_string = ""
+
+    for i in range(len(s)):
+        if s[i].isdigit():
+            print("s[i]:", s[i])
+            new_string += s[int(s[i]) + 1]
+            print("new_string:", new_string)
+
+    return new_string
 
 
 if __name__ == "__main__":
