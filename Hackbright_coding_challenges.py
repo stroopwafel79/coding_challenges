@@ -142,10 +142,10 @@ def decode(s):
 
     for i in range(len(s)):
         if s[i].isdigit():
-            print("s[i]:", s[i])
-            print(s[i].isdigit())
-            new_string += s[int(s[i]) + 1]
-            print("new_string:", new_string)
+            # print("s[i]", s[i])
+            # print("s[int(s[i]) + 1]", s[int(s[i]) + 1])
+            new_string += s[int(s[i]) + i + 1]
+            #print("new_string:", new_string)
 
     return new_string
 
