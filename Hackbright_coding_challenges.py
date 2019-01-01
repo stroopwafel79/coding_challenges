@@ -188,27 +188,27 @@ def  lemur(branches):
     2
     >>> lemur([0, 0, 0, 0, 1, 0, 0, 1, 0])
     5
+    >>> lemur([0, 0, 1, 1, 0, 0])
+    3
     """
 
     assert branches[0] == 0, "First branch must be alive"
     assert branches[-1] == 0, "Last branch must be alive"
-
-    if len(lst) == 1, return 0
-    loop over indecies.
-    check if lst(i+1) and lst i + 2 is zero
 
     jumps = 0
     i = 0
 
     # if list is empty or 1, exit with jumps at 0
     if len(branches) <= 1:
-        return jumps
+        return 0
 
-    while i < len(branches):
+    elif len(branches) == 2:
+        return 1
+
+    while i < (len(branches) - 2):
         # check if the next item and the item after that are 0
         # if so, jump 2 branches at once.
-        if branches[i + 1] == 0 and branches[i + 2] == 0 or
-        branches[i + 1] == 1:
+        if (branches[i + 1] == 0 and branches[i + 2] == 0) or branches[i + 1] == 1:
             jumps += 1
             i += 2
 
