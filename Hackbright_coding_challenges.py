@@ -150,6 +150,50 @@ def decode(s):
     return new_string
 
 
+#######Leaping Lemur
+
+# A lemur wants to jump across a span in the forest on branches. She can 
+# jump 1 or 2 branches at a time. Unfortunately, some of the branches 
+# are on dead trees, and she can’t use those branches to jump.
+
+# For example:
+# The black circles are dead branches. In this example, the lemur starts on 
+# the first branch, and jumps 1 to branch #2 (she can’t jump 2 to 
+# branch #3, as it’s dead). She then jumps from 2 to 4 and from 4 to 6. 
+# As she ends up on the last branch, she’s finished.
+# The first and last branch will always be alive, and there will 
+# never be two dead branches in a row (that is, it will always be 
+# possible for her to make this trip).
+# Your challenge is to calculate how many jumps she needs to make.
+
+# Code
+# You’ll be given a list of the branches, like:
+
+# [0, 0, 1, 0, 1, 0]
+# 0 represents alive branches and 1 represents dead branches. The lemur starts on the first branch in the list (index 0) and is finished when she reaches the last branch in the list.
+
+# Write a function that returns the number of jumps needed:
+
+def  lemur(branches):
+    """Return number of jumps needed.
+    >>> lemur([0])
+    0
+    >>> lemur([0, 0])
+    1
+    >>> lemur([0, 0, 0])
+    1
+    >>> lemur([0, 1, 0])
+    1
+    >>> lemur([0, 0, 1, 0])
+    2
+    >>> lemur([0, 0, 0, 0, 1, 0, 0, 1, 0])
+    5
+    """
+
+    assert branches[0] == 0, "First branch must be alive"
+    assert branches[-1] == 0, "Last branch must be alive"
+
+
 if __name__ == "__main__":
     import doctest
     
