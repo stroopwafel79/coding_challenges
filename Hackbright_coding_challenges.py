@@ -193,6 +193,34 @@ def  lemur(branches):
     assert branches[0] == 0, "First branch must be alive"
     assert branches[-1] == 0, "Last branch must be alive"
 
+    if len(lst) == 1, return 0
+    loop over indecies.
+    check if lst(i+1) and lst i + 2 is zero
+
+    jumps = 0
+    i = 0
+
+    # if list is empty or 1, exit with jumps at 0
+    if len(branches) <= 1:
+        return jumps
+
+    while i < len(branches):
+        # check if the next item and the item after that are 0
+        # if so, jump 2 branches at once.
+        if branches[i + 1] == 0 and branches[i + 2] == 0 or
+        branches[i + 1] == 1:
+            jumps += 1
+            i += 2
+
+        elif branches[i + 1] == 0:
+            jumps += 1
+            i += 1
+
+    return jumps
+
+
+
+
 
 if __name__ == "__main__":
     import doctest
