@@ -236,7 +236,6 @@ def missing_number(lst, max_num):
 
     >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
     8
-    This needs to work even if the list isn’t in increasing order:
 
     >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
     8
