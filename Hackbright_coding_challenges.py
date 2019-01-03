@@ -229,14 +229,27 @@ def  lemur(branches):
 # was removed. Your function would be given the list and the max_num (10), 
 # and it should find 8:
 
-# >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
-# 8
-# This needs to work even if the list isn’t in increasing order:
+def missing_number(lst, max_num):
+    """
+    A function that takes this list of numbers, 
+    as well as the max_num, and it should return the missing number.
 
-# >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
-# 8
+    >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
+    8
+    This needs to work even if the list isn’t in increasing order:
+
+    >>> missing_number([2, 1, 4, 3, 6, 5, 7, 10, 9], 10)
+    8
+    """
+
+    num_set = set(lst)
+
+    for i in range(1, max_num + 1):
+        if i not in num_set:
+            return i
 # Step 1 (easiest)
-# Initially, focus on reducing runtime—this should be solvable in O(n) time. You can create an additional list/set/dictionary if necessary.
+# Initially, focus on reducing runtime—this should be solvable in O(n) time. 
+#You can create an additional list/set/dictionary if necessary.
 
 # Write a version that uses a straightforward solution and runs in O(n) time.
 
