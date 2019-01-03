@@ -241,21 +241,25 @@ def missing_number(lst, max_num):
     8
     """
 
+    # Step 1 (easiest)
+    # Initially, focus on reducing runtime—this should be solvable in O(n) time. 
+    # You can create an additional list/set/dictionary if necessary.
+
     num_set = set(lst)
 
     for i in range(1, max_num + 1):
         if i not in num_set:
             return i
-# Step 1 (easiest)
-# Initially, focus on reducing runtime—this should be solvable in O(n) time. 
-#You can create an additional list/set/dictionary if necessary.
-
-# Write a version that uses a straightforward solution and runs in O(n) time.
 
 # Step 2 (harder)
-# Now, think about reducing memory use—did your first solution require you to keep a new list/set/dictionary? Can you think of a different way to think about the problem that doesn’t use additional memory, even if it takes more time?
+# Now, think about reducing memory use—did your first solution require you to keep 
+# a new list/set/dictionary? Can you think of a different way to think about the 
+# problem that doesn’t use additional memory, even if it takes more time?
 
-# There’s a way you could solve this in O(n log n) time that doesn’t require creating another large data structure (technically, while being O(n log n) in runtime, it is O(1) in “runspace”—it uses the same amount of memory no matter how big n is)
+# There’s a way you could solve this in O(n log n) time that doesn’t 
+# require creating another large data structure (technically, while being 
+# O(n log n) in runtime, it is O(1) in “runspace”—it uses the same amount 
+# of memory no matter how big n is)
 
 
 
