@@ -1,3 +1,4 @@
+import math
 #############Is the word an anagram of a palindrome?
 # A palindrome is a word that reads the same forward and backwards 
 # (eg, “racecar”, “tacocat”). An anagram is a rescrambling of a word (eg for “racecar”, you could rescramble this as “arceace”).
@@ -343,7 +344,7 @@ def find_max_even_word(string):
     Given a string, find the largest word that has even length.
 
     >>> find_max_even_word("Tis the hardest things")
-    "things"
+    'things'
     """
 
     s_lst = string.split()
@@ -379,10 +380,10 @@ def find_max_even_word(string):
 def segment_message(message):
     """
     >>> segment_message("012 4567 91011")
-    ["012 (1/4)", "4567(2/4)", "9101(3/4)", "1(4/4)"]
+    ['012 (1/4)', '4567(2/4)', '9101(3/4)', '1(4/4)']
     """
     # First check if the message is < 160 characters
-    if len(message) <= 160:
+    if len(message) <= 4:
         return message
 
     MAX_CHAR = 4
@@ -397,10 +398,15 @@ def segment_message(message):
     num_segments = math.ceil(len(message) / MAX_CHAR)
 
     while start < len(message):
-        segment = message[start:end].lstrip()
+        if message[start] == " ":
+            start += 1
+            end += 1
+
+        segment = message[start:end]
+    
         start += MAX_CHAR
         end += MAX_CHAR
-        suffix = f"{segment_counter}/{num_segments}"
+        suffix = f"({segment_counter}/{num_segments})"
         string_array.append(f"{segment}{suffix}")
 
         segment_counter += 1
