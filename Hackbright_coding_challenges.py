@@ -261,6 +261,81 @@ def missing_number(lst, max_num):
 # O(n log n) in runtime, it is O(1) in “runspace”—it uses the same amount 
 # of memory no matter how big n is)
 
+# 
+
+
+
+#Given an word and a dictionary. Find all anagrams of the word in the dictionary
+word = "madam"
+dictionary = ["set", "this", "aadmm", "oolrs"]
+
+def hash_word(word):
+    dict_out = {}
+    for letter in word:
+    #     if letter in dict_out:
+    #         dict_out[letter] += 1
+    #     else:
+    #         dict_out[letter] = 0
+        dict_out[letter] = dict_out.get(letter, 0) + 1
+    return dict_out
+
+def is_anagram(word1, word2):
+
+    if len(word1) != len(word2):
+        return False
+
+    d1 = hash_word(word1)
+    d2 = hash_word(word2)
+    
+    if len(d1) != len(d2):
+        return False
+
+    for key in d1.keys():
+        if key not in d2:
+            return False
+        if d1[key] != d2[key]:
+            return False
+
+    return True
+
+def check_for_anagrams_in_list(ref_word, word_list):
+    anagram_list = []
+    for word in word_list:
+        if is_anagram(ref_word, word):
+            anagram_list.apend(word)
+    return anagram_list
+
+
+####### Given a DNA strand, return it's compliment
+
+def get_dna_compliment(dna):
+    """ (str) -> str
+    Given a DNA strand(dna) as a string, return it's compliment
+
+    >>> get_dna_compliment('AAACGT')
+    'TTTGCA'
+    >>> get_dna_compliment('CGCGCG')
+    'GCGCGC'
+    """
+    # create a new string that starts empty
+    # loop over each letter in the string
+    # use conditional logic to add compliment 
+    # to new string
+    dna = dna.upper()
+    dna_compliment = ''
+
+    for letter in dna:
+        if letter == 'A':
+            dna_compliment += 'T'
+        elif letter == 'T':
+            dna_compliment += 'A'
+        elif letter == 'C':
+            dna_compliment += 'G'
+        else:
+            dna_compliment += 'C'
+
+    return dna_compliment
+
 
 
 
