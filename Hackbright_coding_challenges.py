@@ -356,6 +356,58 @@ def find_max_even_word(string):
 
 
 
+############ Given a string split into segments for texting
+# Each message is <= 160 characters
+# A suffix is attached to each segmented text Ex: (1/1)
+# A suffix is therefore 5 characters long
+# Due to suffix length, segmented messages can only be 155 characters long
+# A message < 160 characters does not need a suffix
+# If a segmented message starts with a space, that space is removed - KEY POINT
+
+# Ex: "This is a string that needs to be segmented."
+# This is a (1/3) # space is not built in, but is the last character before the break
+# string that needs (2/3) # space is removed before each line (rstrip?)
+# to be segmented.(3/3) # space removed before each line
+
+### Test case using numbers to solidify thoughts
+# Ex: "012 4567 91011" # Message length of 4
+# 012 (suffix)
+# 4567(suffix)
+# 9101(suffix) # space stripped off front
+# 1(suffix)
+
+def segment_message(message):
+    """
+    >>> segment_message("012 4567 91011")
+    ["012 (1/4)", "4567(2/4)", "9101(3/4)", "1(4/4)"]
+    """
+    # First check if the message is < 160 characters
+    if len(message) <= 160:
+        return message
+
+    MAX_CHAR = 4
+
+    # keep track of the starting and ending points
+    start = 0  #4  8   12
+    end =   4  #8  12  16
+
+    segment_counter = 1  
+
+    string_array = []
+    num_segments = math.ceil(len(message) / MAX_CHAR)
+
+    while start < len(message):
+        segment = message[start:end].lstrip()
+        start += MAX_CHAR
+        end += MAX_CHAR
+        suffix = f"{segment_counter}/{num_segments}"
+        string_array.append(f"{segment}{suffix}")
+
+        segment_counter += 1
+
+    return string_array
+
+
 if __name__ == "__main__":
     import doctest
     
