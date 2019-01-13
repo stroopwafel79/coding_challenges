@@ -337,6 +337,23 @@ def get_dna_compliment(dna):
     return dna_compliment
 
 
+############### Given a string, find the largest word that has even length
+def find_max_even_word(string):
+    """
+    Given a string, find the largest word that has even length.
+
+    >>> find_max_even_word("Tis the hardest things")
+    "things"
+    """
+
+    s_lst = string.split()
+    max_even_word = ""
+    for word in s_lst:
+        if len(word) % 2 == 0:
+            if len(word) > len(max_even_word):
+                max_even_word = word
+    return max_even_word
+
 
 
 if __name__ == "__main__":
