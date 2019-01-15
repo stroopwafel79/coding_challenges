@@ -282,12 +282,15 @@ def hash_word(word):
 
 def is_anagram(word1, word2):
 
+    # word lengths must be the same to be an anagram
     if len(word1) != len(word2):
         return False
 
+    # make a letter frequency dictionary of each word
     d1 = hash_word(word1)
     d2 = hash_word(word2)
     
+    # dictionary lengths mush be the same to be anagrams
     if len(d1) != len(d2):
         return False
 
@@ -412,6 +415,57 @@ def segment_message(message):
         segment_counter += 1
 
     return string_array
+
+
+######### Checkr Technical Screen ####Our live coding session consists 
+# of a name matching exercise 
+# that is the foundation of your success at Checkr. We found out quickly 
+# this is a great indicator for future performance and success on the job. 
+# The challenge will consist of verifying names in a given list. You will 
+# have a few test cases to test your solution against and one bonus 
+# transposition question.
+
+
+### two names match if they're 2 letters off or less
+def make_letter_freq_dict(name):
+    letter_freq_dict = {}
+    
+    for char in name:
+        letter_freq_dict[char] = letter_freq_dict.get(char, 0) + 1
+    
+    return letter_freq_dict
+
+def is_close_match(name1, name2):
+    """ Determine if two names match within 2 letters
+    >>> is_close_match("Kristi", "Christi")
+    True
+    >>> is_close_match("Kristi", "Krystal")
+    False
+    """
+    
+    # first compare length to see if one is more than 2 characters longer
+    if abs(len(name1) - len(name2)) > 2:
+        return False
+    
+    
+    name1_freq_dict = make_letter_freq_dict(name1) # {'K': 1, 'r': 1, 'i': 2, 's': 1, 't': 1}
+    name2_freq_dict = make_letter_freq_dict(name2) # {'C': 1, 'h': 1, 'r': 1, 'i': 2, 's': 1, 't': 1}
+    
+    name1_missing_letters = []
+    name2_missing_letters = []
+    
+    for key in name1_freq_dict:
+        if key not in name2_freq_dict:
+            name2_missing_letters.append(key)
+            
+    
+    for key in name2_freq_dict:
+        if key not in name1_freq_dict:
+            name1_missing_letters.append(key)
+            
+    return len(name1_missing_letters) <= 2 and len(name2_missing_letters) <= 2
+        
+    
 
 
 if __name__ == "__main__":
