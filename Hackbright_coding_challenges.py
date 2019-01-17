@@ -1,4 +1,5 @@
 import math
+import unittest
 #############Is the word an anagram of a palindrome?
 # A palindrome is a word that reads the same forward and backwards 
 # (eg, “racecar”, “tacocat”). An anagram is a rescrambling of a word (eg for “racecar”, you could rescramble this as “arceace”).
@@ -474,6 +475,8 @@ if __name__ == "__main__":
     result = doctest.testmod()
     if result.failed == 0:
         print("ALL TESTS PASSED")
+
+    unittest.main()
 
 
 
