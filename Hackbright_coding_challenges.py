@@ -481,13 +481,14 @@ def is_close_match(name1, name2):
 class TicTacToeBoard:
 
     def __init__(self):
-        self.cells = [[0] * 3 for n in range(3)]
+        self.cells = [[" "] * 3 for n in range(3)]
         self.player_o = 1
         self.player_x = 2
 
     def print_board(self):
         for row in self.cells:
             print(row)
+            print("-------")
 
     def move_piece(self, location):
         pass
