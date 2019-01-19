@@ -476,21 +476,28 @@ def is_close_match(name1, name2):
 #     [1, 1, 1, 1, 1]
 
 # to create board:
-array = [ [0] * 3 for n in range(3)]
-print(array)
+
 
 class TicTacToeBoard:
 
-    def __init__(self)
+    def __init__(self):
         self.cells = [[0] * 3 for n in range(3)]
+        self.player_o = 1
+        self.player_x = 2
 
-    def create_board(self):
-        # create the board
+    def print_board(self):
+        for row in self.cells:
+            print(row)
 
     def move_piece(self, location):
+        pass
         # move piece to specified location
+        # check if win
+        # check if board is full
+        # print board
 
-
+tic = TicTacToeBoard()
+tic.print_board()
 
 
 if __name__ == "__main__":
