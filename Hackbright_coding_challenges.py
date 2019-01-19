@@ -6,6 +6,12 @@ import unittest
 # Determine if the given word is a re-scrambling of a palindrome.
 # The word will only contain lowercase letters, a-z.
 
+class TestMakeDict(unittest.TestCase):
+
+    def test_make_dict(self):
+        
+
+
 def make_dict(s):
     
     letter_dict = {}
