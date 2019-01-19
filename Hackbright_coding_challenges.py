@@ -466,7 +466,31 @@ def is_close_match(name1, name2):
             
     return len(name1_missing_letters) <= 2 and len(name2_missing_letters) <= 2
         
-    
+####### Make a game board
+
+# Board as array of arrays 
+# Ex: [1, 1, 1, 1, 1],
+#     [1, 1, 1, 1, 1],
+#     [1, 1, 1, 1, 1],
+#     [1, 1, 1, 1, 1],
+#     [1, 1, 1, 1, 1]
+
+# to create board:
+array = [ [0] * 3 for n in range(3)]
+print(array)
+
+class TicTacToeBoard:
+
+    def __init__(self)
+        self.cells = [[0] * 3 for n in range(3)]
+
+    def create_board(self):
+        # create the board
+
+    def move_piece(self, location):
+        # move piece to specified location
+
+
 
 
 if __name__ == "__main__":
