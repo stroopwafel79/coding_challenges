@@ -1,16 +1,10 @@
 import math
-import unittest
+
 #############Is the word an anagram of a palindrome?
 # A palindrome is a word that reads the same forward and backwards 
 # (eg, “racecar”, “tacocat”). An anagram is a rescrambling of a word (eg for “racecar”, you could rescramble this as “arceace”).
 # Determine if the given word is a re-scrambling of a palindrome.
 # The word will only contain lowercase letters, a-z.
-
-class TestMakeDict(unittest.TestCase):
-
-    def test_make_dict(self):
-        
-
 
 def make_dict(s):
     
@@ -484,33 +478,33 @@ def is_close_match(name1, name2):
 # to create board:
 
 
-class TicTacToeBoard:
+# class TicTacToeBoard:
 
-    def __init__(self):
-        self.cells = [[0] * 3 for n in range(3)]
+#     def __init__(self):
+#         self.cells = [[0] * 3 for n in range(3)]
         
-    def print_board(self):
-        for row in self.cells:
-            print(row)
+#     def print_board(self):
+#         for row in self.cells:
+#             print(row)
             
-    def move_piece(self, player, x_axis, y_axis):
+#     def move_piece(self, player, x_axis, y_axis):
         
-        # move piece to specified location
-        if self.player == "X"
-            self.cells[y_axis][x_axis] = "X"
-        else:
-            self.cells[y_axis][x_axis] = "O"
+#         # move piece to specified location
+#         if self.player == "X"
+#             self.cells[y_axis][x_axis] = "X"
+#         else:
+#             self.cells[y_axis][x_axis] = "O"
 
 
 
         
-        # move piece to specified location
-        # check if win
-        # check if board is full
-        # print board
+#         # move piece to specified location
+#         # check if win
+#         # check if board is full
+#         # print board
 
-tic = TicTacToeBoard()
-tic.print_board()
+# tic = TicTacToeBoard()
+# tic.print_board()
 
 
 if __name__ == "__main__":
@@ -520,7 +514,7 @@ if __name__ == "__main__":
     if result.failed == 0:
         print("ALL TESTS PASSED")
 
-    unittest.main()
+    
 
 
 
