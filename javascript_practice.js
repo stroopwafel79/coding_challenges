@@ -151,3 +151,10 @@ cat.hasOwnProperty('name'); // true
 Object.keys(cat); // (4) ["name", "color", "age", "disposition"]
 Object.values(cat); // (4) ["Tater", "black", 14, "Sweet"]
 Object.entries(cat); // (4) [Array(2), Array(2), Array(2), Array(2)]
+
+//////////////////// More than none
+undefined - No assigned value. Functions, by default, return Undefined
+null - Explicitly having no value. More similar to None in Python
+NaN - Not-a-Number. Gets returned when mathematical operations fail.
+// Will result in false :
+null, undefined, NaN, Empty string, 0, false
