@@ -40,3 +40,51 @@ function add(x, y=0) {
 add(3); // return 3 b/c y defaults to 0
 add(3, 2); // return 5
 
+// String formating use backticks
+const name = 'Kristi';
+const message = `Hello ${name}!`;
+
+const msg = `
+	This is a multiline
+	comment that uses
+	backticks.
+`;
+
+
+// Lists/arrays
+const states = ['CA', 'MA', 'FL'];
+states.push('NY');
+
+states[2]; // 'FL'
+states.slice(2); // ['FL', 'NY'];
+states.slice(2, 3); // ['FL']
+
+states.includes('FL'); // true
+states.includes('OR'); // false
+
+// Loop over lists/arrays
+for (let state of states) {
+	console.log(state);
+}
+// CA
+// MA
+// FL
+// NY
+
+// Loop over indicies of lists/arrays
+for (let i = 0; i < states.length; i++) {
+	console.log(`I love ${states[i]}!`);
+}
+// I love CA!
+// I love MA!
+// I love FL!
+// I love NY!
+
+// Behaves like ennumerate
+states.forEach((state, i) => {
+	console.log(`${i}, ${state}`);
+});
+// 0, CA
+// 1, MA
+// 2, FL
+// 3, NY
