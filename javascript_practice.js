@@ -136,3 +136,18 @@ myColors.has('red'); // true
 for (let color of myColors){
 	console.log(color);
 }
+
+
+/////////////////// Create objects 
+// Can create objects without a class
+const cat = {
+	name: 'Anna',
+	color: 'tabby',
+	age: 5
+};
+
+cat.disposition = 'Sweet';
+cat.hasOwnProperty('name'); // true
+Object.keys(cat); // (4) ["name", "color", "age", "disposition"]
+Object.values(cat); // (4) ["Tater", "black", 14, "Sweet"]
+Object.entries(cat); // (4) [Array(2), Array(2), Array(2), Array(2)]
