@@ -88,3 +88,32 @@ states.forEach((state, i) => {
 // 1, MA
 // 2, FL
 // 3, NY
+
+// MAPS are JavaScript's dictionaries
+// MAPS are a list of lists, but behave like a dictionary
+const capitals = new Map([
+	['CA', 'Sacramento'],
+	['MA', 'Boston'],
+	['FL', 'Jacksonville'],
+]);
+
+capitals.set('NY', 'New York');
+capitals.get('CA'); // Sacramento
+caplitals.has('MA'); // true
+capitals.keys(); // MapIterator {"CA", "MA", "FL", "NY"}
+capitals.values(); // MapIterator {"Sacramento", "Boston", "Jacksonville", "New York"}
+capitals.entries(); // MapIterator {"CA" => "Sacramento", "MA" => "Boston", "FL" => "Jacksonville", "NY" => "New York"}
+capitals.size; // 4
+
+if (capitals.has('CA')) {
+	console.log('California'); 
+}
+
+// Loop over key, values of a Map
+for (let [key, value] of capitals) {
+	console.log(`${value} is the capital of ${key}`);
+}
+// OR
+for (let [capital, state] of capitals) {
+	console.log(`${capital} is the capital of ${state}`);
+}
