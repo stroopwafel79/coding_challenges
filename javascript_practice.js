@@ -1,4 +1,4 @@
-// Logical operators
+/////////////// Logical operators
 if (x > 10 && x < 30) {
 	console.log('Between 10 and 30');
 } else if (x > 31 || x < 11) {
@@ -8,7 +8,7 @@ if (x > 10 && x < 30) {
 }
 
 
-// while loop
+//////////////// while loop
 let i = 0;
 while (i < 5) {
 	console.log(i);
@@ -16,7 +16,7 @@ while (i < 5) {
 }
 
 
-// function declarations
+//////////////// function declarations
 function multiply(x, y) {
 	return x * y;
 }
@@ -40,7 +40,7 @@ function add(x, y=0) {
 add(3); // return 3 b/c y defaults to 0
 add(3, 2); // return 5
 
-// String formating use backticks
+////////////////// String formating use backticks
 const name = 'Kristi';
 const message = `Hello ${name}!`;
 
@@ -51,7 +51,7 @@ const msg = `
 `;
 
 
-// Lists/arrays
+/////////////////// Lists/arrays
 const states = ['CA', 'MA', 'FL'];
 states.push('NY');
 
@@ -62,7 +62,7 @@ states.slice(2, 3); // ['FL']
 states.includes('FL'); // true
 states.includes('OR'); // false
 
-// Loop over lists/arrays
+//////////////////// Loop over lists/arrays
 for (let state of states) {
 	console.log(state);
 }
@@ -70,6 +70,11 @@ for (let state of states) {
 // MA
 // FL
 // NY
+
+// looping using forEach
+states.forEach(function (state) {
+	console.log(state);
+});
 
 // Loop over indicies of lists/arrays
 for (let i = 0; i < states.length; i++) {
@@ -89,7 +94,7 @@ states.forEach((state, i) => {
 // 2, FL
 // 3, NY
 
-// MAPS are JavaScript's dictionaries
+//////////////////// MAPS are JavaScript's dictionaries
 // MAPS are a list of lists, but behave like a dictionary
 const capitals = new Map([
 	['CA', 'Sacramento'],
@@ -116,4 +121,18 @@ for (let [key, value] of capitals) {
 // OR
 for (let [capital, state] of capitals) {
 	console.log(`${capital} is the capital of ${state}`);
+}
+
+// Sets
+const colors = new Set();
+// OR
+const myColors = new Set(
+	['red', 'green', 'blue']
+);
+
+myColors.add('purple');
+myColors.has('red'); // true
+
+for (let color of myColors){
+	console.log(color);
 }
