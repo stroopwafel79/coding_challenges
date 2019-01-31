@@ -158,3 +158,13 @@ null - Explicitly having no value. More similar to None in Python
 NaN - Not-a-Number. Gets returned when mathematical operations fail.
 // Will result in false :
 null, undefined, NaN, Empty string, 0, false
+
+
+////////////////////// The DOM
+// YOU MUST FIRST GET THE ELEMENT
+document.querySelector("#id");
+document.getElementById("id");
+document.querySelectorAll(".class"); // array of elements by class name
+document.querySelectorAll("p"); // array of elements by tag
+const id = document.querySelector("#id");
+console.dir(id);
