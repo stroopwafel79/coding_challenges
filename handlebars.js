@@ -1,24 +1,21 @@
+const fs = require('fs');
 const handlebars = require('handlebars');
 
-// our data source
-const data = {
-  company: "Freddy's Fish Farm",
-  phone: '619-555-1212',
-  owner: {
-    firstName: 'Freddy',
-    lastName: 'Fishman'
-  }
-};
+const inFile = './handlebars.hbs';
+const outFile = './report1.html';
 
-// our template
-const source = `
-<h1>Aquaponics Report for {{company}}</h1>
-<p>Owner: {{owner.firstName}} {{owner.lastName}}</p>
-<p>Phone: {{phone}}</p>
-`;
+// load JSON directly using the node.js require function
+const data = require('./handlebars.json');
 
-// Use strict mode so that Handlebars will throw exceptions if we
-// attempt to use fields in our template that are not in our data set.
-const template = handlebars.compile(source, {strict: true});
+// retrieve our template from the file
+const source = fs.readFileSync(inFile, 'utf8');
+// compile the template in strict mode
+const template = handlebars.compile(source, { strict: true });
+
 const result = template(data);
+
 console.log(result);
+
+// write the results to an HTML file rather than the console
+fs.writeFileSync(outFile, result);
+console.log(`File written to ${outFile}`);
