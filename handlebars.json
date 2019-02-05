@@ -1,4 +1,4 @@
-{
+[{
   "company": "Freddy's Fish Farm",
   "phone": "619-555-1212",
   "owner": {
@@ -6,4 +6,22 @@
     "lastName": "Fishman"
   },
   "rewardsCustomer": true
-}
+},
+{
+  "company": "Mina's Pizzas",
+  "phone": "555-5555",
+  "owner": {
+    "firstName": "Mina",
+    "lastName": "Lanzisera"
+  },
+  "rewardsCustomer": false
+},
+{
+  "company": "Eloise's Kitty Town",
+  "phone": "123-4556",
+  "owner": {
+    "firstName": "Eloise",
+    "lastName": "Lanzisera"
+  },
+  "rewardsCustomer": true
+}]

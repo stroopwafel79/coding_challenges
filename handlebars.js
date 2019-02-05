@@ -1,21 +1,27 @@
-const fs = require('fs');
-const handlebars = require('handlebars');
+// const fs = require('fs');
+// const handlebars = require('handlebars');
 
-const inFile = './handlebars.hbs';
-const outFile = './handlebars.html';
+// // compile the template in strict mode
+// const template = handlebars.compile(source, { strict: true });
 
-// load JSON directly using the node.js require function
-const data = require('./handlebars.json');
+// const result = template(data);
 
-// retrieve our template from the file
-const source = fs.readFileSync(inFile, 'utf8');
-// compile the template in strict mode
-const template = handlebars.compile(source, { strict: true });
+// console.log(result);
 
-const result = template(data);
+// // get request to json data
+// $.get('handlebars.json', (result) => {
+// 	console.log(`The result is: ${result}`);
+// })
 
-console.log(result);
 
-// write the results to an HTML file rather than the console
-fs.writeFileSync(outFile, result);
-console.log(`File written to ${outFile}`);
+
+
+const source   = $("#template").innerHTML;
+const template = Handlebars.compile(source, { strict: true });
+
+const context = $.get("handlebars.json", (results) => {
+	console.log(`This is the context: ${context}`);
+	console.log(`This is the results: ${results}`);
+});
+
+const html = template(context);
