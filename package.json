@@ -1,0 +1,23 @@
+{
+  "name": "coding_practice",
+  "version": "1.0.0",
+  "description": "This repository contains solutions to coding challenges for interview prep.",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stroopwafel79/coding_challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stroopwafel79/coding_challenges/issues"
+  },
+  "homepage": "https://github.com/stroopwafel79/coding_challenges#readme",
+  "dependencies": {
+    "handlebars": "^4.0.12"
+  }
+}
