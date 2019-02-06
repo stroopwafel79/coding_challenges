@@ -29,8 +29,11 @@ const url = 'https://learnwebcode.github.io/json-example/pets-data.json'
 const petsData = $.get(url, createHTML);
 
 
-
-Handlebars.registerHelper("calculateAge", function(birthYear) {
+// Create helper function by useing handlebars .registerHelper method
+// argument 1 is what we want the helper to be named
+// argument 2 is the anonymous function being created
+// whatever function returns is value used in the template
+Handlebars.registerHelper("calculateAge", (birthYear) => {
   const age = new Date().getFullYear() - birthYear;
 
   if (age > 0) {
@@ -44,12 +47,15 @@ Handlebars.registerHelper("calculateAge", function(birthYear) {
 function createHTML(petsData) {
   // get the string of text inside the template
   const rawTemplate = $("#petsTemplate").html();
+  console.log(`rawTemplate ${rawTemplate}`);
   // const rawTemplate = document.getElementById("petsTemplate").innerHTML;
 
   // turns compiledTemplate into a usable function
   const compiledTemplate = Handlebars.compile(rawTemplate, { strict: true });
+  console.log(`compiledTemplate ${compiledTemplate}`);
   // pass our data to the template function so it can create HTML
   const ourGeneratedHTML = compiledTemplate(petsData);
+  console.log(`ourGeneratedHTML: ${ourGeneratedHTML}`);
 
 
   $("#pets-container").html(ourGeneratedHTML);
