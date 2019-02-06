@@ -26,12 +26,12 @@
 
 // Now make AJAX request using JQuery - MUUUUUCH Easier
 const url = 'https://learnwebcode.github.io/json-example/pets-data.json'
-const ourRequest = $.get(url, createHTML);
+const petsData = $.get(url, createHTML);
 
 
 
 Handlebars.registerHelper("calculateAge", function(birthYear) {
-  var age = new Date().getFullYear() - birthYear;
+  const age = new Date().getFullYear() - birthYear;
 
   if (age > 0) {
     return age + " years old";
@@ -42,10 +42,18 @@ Handlebars.registerHelper("calculateAge", function(birthYear) {
 });
 
 function createHTML(petsData) {
-  var rawTemplate = document.getElementById("petsTemplate").innerHTML;
-  var compiledTemplate = Handlebars.compile(rawTemplate);
-  var ourGeneratedHTML = compiledTemplate(petsData);
+  // get the string of text inside the template
+  const rawTemplate = $("#petsTemplate").html();
+  // const rawTemplate = document.getElementById("petsTemplate").innerHTML;
 
-  var petsContainer = document.getElementById("pets-container");
-  petsContainer.innerHTML = ourGeneratedHTML;
+  // turns compiledTemplate into a usable function
+  const compiledTemplate = Handlebars.compile(rawTemplate, { strict: true });
+  // pass our data to the template function so it can create HTML
+  const ourGeneratedHTML = compiledTemplate(petsData);
+
+
+  $("#pets-container").html(ourGeneratedHTML);
+  // const petsContainer = document.getElementById("pets-container");
+  // const jqpetsContainer = $("#pets-container");
+  // petsContainer.innerHTML = ourGeneratedHTML;
 }
