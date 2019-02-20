@@ -27,8 +27,6 @@
 // Now make AJAX request using JQuery - MUUUUUCH Easier
 const url = 'https://learnwebcode.github.io/json-example/pets-data.json'
 const petsData = $.get(url, createHTML);
-
-
 // Create helper function by useing handlebars .registerHelper method
 // argument 1 is what we want the helper to be named
 // argument 2 is the anonymous function being created
@@ -56,8 +54,6 @@ function createHTML(petsData) {
   // pass our data to the template function so it can create HTML
   const ourGeneratedHTML = compiledTemplate(petsData);
   console.log(`ourGeneratedHTML: ${ourGeneratedHTML}`);
-
-
   $("#pets-container").html(ourGeneratedHTML);
   // const petsContainer = document.getElementById("pets-container");
   // const jqpetsContainer = $("#pets-container");
