@@ -532,6 +532,9 @@ def is_pangram(sentence):
 
     return False
 
+    # Hackbright solution
+    # used = {char.lower() for char in sentence if char.isalpha()}
+    # return len(used) == 26
 
 
 
