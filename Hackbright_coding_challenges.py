@@ -593,6 +593,54 @@ def pig_latin(phrase):
     return " ".join(pig_latin_lst)
 
 
+#### Prime Number Generator #####
+# A prime number is a number >= 2 that is only evenly divisible by itself and 1.
+
+# So, for example, 3 is a prime number but 4 (divisible by 2) is not. The first 
+# few primes are: 2, 3, 5, 7, 11.
+
+# Write a function that produces count prime numbers, where count is a value passed 
+# into the function.
+
+def is_prime(num):
+    """ Determine if a number is prime."""
+
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+        
+    return True
+
+
+def primes(count):
+    """Return count number of prime numbers, starting at 2.
+    >>> primes(1)
+    [2]
+
+    >>> primes(5)
+    [2, 3, 5, 7, 11]
+    """
+
+    # need a helper function that generates prime numbers
+        # how do you mathematically determine if a number is prime?
+        # even numbers that are not 2 are automatically not prime (exclude evens)
+        # that leaves odd numbers 3, 5, 7, 9. 
+        # if a number is divisible by 9 then it's automatically divisible by 3 as well so get rid of 9
+        # that leaves 3, 5, 7
+        # I know there's a better way to do this, but I can't think of it.
+
+    # add each number to a list until the len of list == count (list comprehension)
+    prime_lst = []
+    num = 2
+    while len(prime_lst) < count:
+        if is_prime(num):
+            prime_lst.append(num)
+        num += 1
+
+    return prime_lst
+
+
+
 
 if __name__ == "__main__":
     import doctest
