@@ -1,6 +1,7 @@
 import unittest
 
-from algorithms_practice import sieve_of_eratosthenes, binary_search
+from algorithms_practice import (sieve_of_eratosthenes, binary_search,
+								 merge_sort)
 
 # Create class with Test infront of what you're going to test
 class SieveOfErastosthenes(unittest.TestCase):
@@ -22,6 +23,14 @@ class TestBinarySearch(unittest.TestCase):
 		nums_2 = [i for i in range(100000)]
 		self.assertFalse(binary_search(50, nums_1))
 		self.assertTrue(binary_search(5, nums_2))
+
+
+class TestMergeSort(unittest.TestCase):
+
+	def test_merge_sort(self):
+		lst_1 = [2, 8, 20, 1, 5]
+		result_1 = [1, 2, 5, 8, 20]
+		self.assertEqual(merge_sort(lst_1), result_1)
 
 if __name__ == '__main__':
 

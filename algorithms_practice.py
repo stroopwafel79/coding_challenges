@@ -58,6 +58,49 @@ def binary_search(target, nums):
     return False
 
 
+##### Binary Search ######
+
+def merge_sort(lst_to_sort):
+    """ Sort a list """
+
+    # Base case: an empty list or one with one element is automatically sorted.
+    if len(lst_to_sort) < 2:
+        return lst_to_sort
+
+    # Step 1: divide list in half
+    mid_index = len(lst_to_sort) // 2
+    left = lst_to_sort[: mid_index]
+    right = lst_to_sort[mid_index :]
+
+    # Step 2: sort each half
+    sorted_left = merge_sort(left)
+    sorted_right = merge_sort(right)
+
+    # Step 3: merge sorted halfs together
+    sorted_lst = []
+    curr_index_left = 0
+    curr_index_right = 0
+
+    while len(sorted_lst) < len(left) + len(right):
+        # current left index is within the bounds of the left list
+        if (curr_index_left < len(left) and
+                # TODO test if you can reword as len(right) == 0
+                # Is this testing if the right list is empty?
+                (curr_index_right == len(right) or
+                # 1st elem in left < 1st elem in right
+                 sorted_left[curr_index_left] < sorted_right[curr_index_right]
+                )
+            ): 
+            sorted_lst.append(sorted_left[curr_index_left])
+            curr_index_left += 1
+
+        else:
+            sorted_lst.append(sorted_right[curr_index_right])
+            curr_index_right += 1
+
+    return sorted_lst
+
+
 
 
 
