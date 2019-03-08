@@ -536,6 +536,62 @@ def is_pangram(sentence):
     # used = {char.lower() for char in sentence if char.isalpha()}
     # return len(used) == 26
 
+###### Pig Latin ######
+# Turn a phrase into pig latin. There will be no punctuation.
+# If the word begins with a consonant (not a, e, i, o, u), move the first letter to the end and add ‘ay’
+# If the word begins with a vowel, add ‘yay’ to the end
+
+#def pig_latin(phrase):
+    """ Turn a phrase into pig latin.
+
+    >>> pig_latin('porcupines are cute')
+    'orcupinespay areyay utecay'
+
+    >>> pig_latin('give me an apple')
+    'ivegay emay anyay appleyay'
+    """
+
+    # will want to handle each word separately (turn into a list of words)
+    # rearrange each word according to rules (loop over list with conditionals)
+    # add each rearranged word to new list (append)
+    # make list back into a sentence (" ".join(","))
+    # Edges: capital letters
+
+    # word_lst = phrase.split()
+    # pig_latin_lst = []
+
+    # for word in word_lst:
+    #     if word[0] in {"a", "e", "i", "o", "u"}:
+    #         pig_latin_lst.append(f"{word}yay")
+    #     else:
+    #         pig_latin_lst.append(f"{word[1:]}{word[0]}ay")
+
+    # return " ".join(pig_latin_lst)
+
+    ## Hackbright solution used a helper function
+
+def make_pig_latin_word(word):
+    """ Helper function to turn a word into pig latin"""
+    if word[0] in {"a", "e", "i", "o", "u"}:
+        return word + "yay"
+    else:
+        return word[1:] + word[0] + "ay"
+
+def pig_latin(phrase):
+    """ Turn a phrase into pig latin.
+
+    >>> pig_latin('porcupines are cute')
+    'orcupinespay areyay utecay'
+
+    >>> pig_latin('give me an apple')
+    'ivegay emay anyay appleyay'
+    """
+
+    word_lst = phrase.split()
+    pig_latin_lst = [make_pig_latin_word(word) for word in word_lst]
+    
+    return " ".join(pig_latin_lst)
+
 
 
 if __name__ == "__main__":
@@ -545,7 +601,7 @@ if __name__ == "__main__":
     if result.failed == 0:
         print("ALL TESTS PASSED")
 
-    # is_pangram("The quick brown fox jumps over the lazy dog!")
+    #pig_latin('porcupines are cute')
     
     
 
