@@ -1,18 +1,7 @@
 ##### Sieve of Eratosthenes #######
 
 def sieve_of_eratosthenes(num):
-    """ Return a list of all prime numbers smaller than or equal to num.
-
-    >>> sieve_of_eratosthenes(30)
-    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
-
-    >>> sieve_of_eratosthenes(20)
-    [2, 3, 5, 7, 11, 13, 17, 19]
-
-    >>> sieve_of_eratosthenes(6)
-    [2, 3, 5]
-
-    """
+    """ Return a list of all prime numbers smaller than or equal to num."""
     # Create a boolean array "prime[0..n]" and initialize 
     # all entries it as true. A value in prime[i] will 
     # finally be false if i is Not a prime, else true.
