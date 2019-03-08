@@ -507,6 +507,34 @@ def is_close_match(name1, name2):
 # tic.print_board()
 
 
+####### Panagram ########
+# A pangram is a sentence that contains all the letters of the English alphabet at least once, 
+# like “The quick brown fox jumps over the lazy dog.”
+
+# Write a function to check a sentence to see if it is a pangram or not.
+
+def is_pangram(sentence):
+    """ Determine if the sentence is a panagram 
+
+    >>> is_pangram("The quick brown fox jumps over the lazy dog!")
+    True
+
+    >>> is_pangram("I like cats, but not mice")
+    False
+    """
+
+    # get rid of spaces and punctuation
+    # Edges: deal with spaces, non-alpha characters, and capital letters
+    just_chars = set(''.join(char for char in sentence if char.isalpha()).lower())
+    
+    if len(just_chars) == 26:
+        return True
+
+    return False
+
+
+
+
 if __name__ == "__main__":
     import doctest
     
@@ -514,6 +542,8 @@ if __name__ == "__main__":
     if result.failed == 0:
         print("ALL TESTS PASSED")
 
+    # is_pangram("The quick brown fox jumps over the lazy dog!")
+    
     
 
 
