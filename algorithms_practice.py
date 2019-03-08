@@ -35,9 +35,21 @@ def sieve_of_eratosthenes(num):
 
         p += 1
         
-
     for i in range(2, num):
         if prime[i] == True:
             prime_lst.append(i)
 
     return prime_lst
+
+####### Binary Search #######
+
+def binary_search(target, nums):
+    """ Determine if target is present in a SORTED list of nums."""
+    
+
+if __name__ == '__main__':
+    import doctest
+
+    result = doctest.testmod()
+    if result.failed == 0:
+        print("ALL TESTS PASSED")
