@@ -45,7 +45,37 @@ def sieve_of_eratosthenes(num):
 
 def binary_search(target, nums):
     """ Determine if target is present in a SORTED list of nums."""
-    
+
+    floor_index = -1
+    ceiling_index = len(nums)
+
+    # as long as there's at least one index between floor and ceiling
+    # when this is false, the list has been exhausted and the target
+    # is not present.
+    while floor_index + 1 < ceiling_index:
+        mid_index = (ceiling_index - floor_index) // 2
+        guess_index = floor_index + mid_index
+        guess_value = nums[guess_index]
+
+        if guess_value == target:
+            return True
+
+        if guess_value > target:
+            ceiling_index = guess_index
+
+        else:
+            floor_index = guess_index
+
+    return False
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     import doctest
