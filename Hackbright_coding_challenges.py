@@ -643,6 +643,45 @@ def primes(count):
     return prime_lst
 
 
+######## Print Digits Backwards ########
+
+
+def print_digits(num):
+    """ Print digits in reverse
+
+    >>> print_digits(1)
+    1
+    >>> print_digits(314)
+    4
+    1
+    3
+    >>> print_digits(12)
+    2
+    1
+    """
+
+    # make string into a list of characters
+    # reverse list
+    # loop over list, printing each character
+
+    # problem with this is that is prints the ints as 
+    # strings.
+    # reversed_nums = reversed(str(num))
+    # for num in reversed_nums:
+    #     print(num)
+
+    # Hackbright solution
+    while num:
+        next_digit = num % 10
+        print(next_digit)
+        num = (num - next_digit) // 10
+        
+
+
+
+
+
+
 if __name__ == "__main__":
     import doctest
     
