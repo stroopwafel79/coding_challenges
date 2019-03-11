@@ -675,7 +675,32 @@ def print_digits(num):
         next_digit = num % 10
         print(next_digit)
         num = (num - next_digit) // 10
-        
+
+
+####### Print list recursively #########
+
+def print_recursively(lst):
+    """ Print a given list (lst) recursively
+
+    >>> print_recursively([1, 2, 3])
+    1
+    2
+    3
+    """
+
+    # base case: when the list is empty
+    if not lst:
+        return
+
+    print(lst[0])
+    print_recursively(lst[1:])
+    return
+
+    # Hackbrights solution
+
+    # if lst:
+    #     print(lst[0])
+    #     print_recursively([1:])
 
 
 
