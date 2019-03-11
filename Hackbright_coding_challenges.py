@@ -701,6 +701,47 @@ def print_recursively(lst):
     # if lst:
     #     print(lst[0])
     #     print_recursively([1:])
+    
+
+####### Recursive Index #########
+def recursive_index(needle, haystack):
+    """Given list (haystack), return index (0-based) of needle in the list.
+
+    Return None if needle is not in haystack.
+
+    Do this with recursion. You MAY NOT USE A `for` OR `while` LOOP.
+
+    >>> recursive_search("hey", ["hey", "there", "you"])
+    0
+
+    >>> recursive_search("you", ["hey", "there", "you"])
+    2
+    """
+
+    # Base case is when list is empty
+    # need to keep track of the index. how?
+    # need to shrink the list as we go
+
+    # What's the base case?
+    # How are you going to move forward?
+    # 
+    
+    def _recursive_index(needle, haystack, start_at):
+
+        # Check if not found (we've gone too far)
+        if start_at == len(haystack):
+            return None
+
+        # Have we found it?
+        if haystack[start_at] == needle:
+            return start_at
+
+        return _recursive_index(needle, haystack, start_at + 1)
+
+    return _recursive_index(needle, haystack, 0)
+
+
+
 
 
 
