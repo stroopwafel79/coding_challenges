@@ -889,28 +889,41 @@ def reverse_linked_list(head):
 
     # 3 -> 2 -> 1
 
-    ### My solution reverses the LL in place. HB's creates a new LL
-    # current = head
-    # second_curr = current.next
-    # third_curr = current.next.next
+    ### My solution reverses the LL in place.
+    current = head
+    second_curr = current.next
+    third_curr = current.next.next
 
-    # while second_curr.next:
-    #     if current == head:
-    #         current.next = None
+    while second_curr.next:
+        if current == head:
+            current.next = None
 
-    #     second_curr.next = current
-    #     current = second_curr
+        second_curr.next = current
+        current = second_curr
 
-    #     if second_curr.next:
-    #         second_curr = third_curr
+        if second_curr.next:
+            second_curr = third_curr
 
-    #     if second_curr.next:
-    #         third_curr = second_curr.next
+        if second_curr.next:
+            third_curr = second_curr.next
 
-    # second_curr.next = current
-    # head = second_curr
+    second_curr.next = current
+    head = second_curr
 
-    # return head
+    return head
+
+
+    ##### HB's solution ######
+    prev = None
+    curr = lst.head
+
+    while curr is not None:
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+
+    lst.head = prev
 
 
 
