@@ -792,6 +792,63 @@ def deduped(items):
     return deduped_lst
 
 
+###### Remove Linked List Node ######
+
+class Node(object):
+    """Class in a linked list."""
+
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+    def as_string(self):
+        """Represent data for this node and it's successors as a string.
+
+        >>> Node(3).as_string()
+        '3'
+
+        >>> Node(3, Node(2, Node(1))).as_string()
+        '321'
+        """
+
+        out = []
+        current = self
+
+        while current:
+            out.append(str(current.data))
+            current = current.next
+
+        return "".join(out)
+
+def remove_node(node):
+    """Given a node in a linked list, remove it.
+
+    Remove this node from a linked list. Note that we do not have access to
+    any other nodes of the linked list, like the head or the tail.
+
+    Does not return anything; changes list in place.
+    >>> ll = Node(1, Node(2, Node(3, Node(4, Node(5)))))  # 1->2->3->4->5
+    >>> three_node = ll.next.next
+    >>> remove_node(three_node)
+    >>> ll.as_string()
+    '1245'
+
+    >>> ll = Node(1, Node(2, Node(3, Node(4, Node(5)))))  # 1->2->3->4->5
+    >>> one_node = ll
+    >>> remove_node(one_node)
+    >>> ll.as_string()
+    '2345'
+    """
+
+    # if Node 3 is deleted, Node 2's next must be updated to Node(3)'s next'
+
+    # can update given node's data to the next node's data
+    # can update given node's next to the next node's next
+
+    node.data = node.next.data
+    node.next = node.next.next
+
+
 
 
 if __name__ == "__main__":
