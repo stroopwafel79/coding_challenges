@@ -701,7 +701,7 @@ def print_recursively(lst):
     # if lst:
     #     print(lst[0])
     #     print_recursively([1:])
-    
+
 
 ####### Recursive Index #########
 def recursive_index(needle, haystack):
@@ -711,10 +711,10 @@ def recursive_index(needle, haystack):
 
     Do this with recursion. You MAY NOT USE A `for` OR `while` LOOP.
 
-    >>> recursive_search("hey", ["hey", "there", "you"])
+    >>> recursive_index("hey", ["hey", "there", "you"])
     0
 
-    >>> recursive_search("you", ["hey", "there", "you"])
+    >>> recursive_index("you", ["hey", "there", "you"])
     2
     """
 
@@ -740,10 +740,56 @@ def recursive_index(needle, haystack):
 
     return _recursive_index(needle, haystack, 0)
 
+######## Remove Duplicates #########
+# write a function that is given a list of items and returns a new list of those items, 
+# in the same order, but with duplicate removed.
 
+def deduped(items):
+    """Return new list from items with duplicates removed.
+    >>> deduped([1, 1, 1])
+    [1]
+    >>> deduped([1, 2, 1, 1, 3])
+    [1, 2, 3]
+    >>> deduped([1, 2, 3])
+    [1, 2, 3]
+    >>> deduped([])
+    []
+    >>> a = [1, 2, 3]
+    >>> b = deduped(a)
+    >>> a == b
+    True
 
+    >>> a is b
+    False
+    """
 
+    # create a new list
+    # create a set of the list for fast lookup
+    # Loop over current list and check if
 
+    #### Solution 1 - all tests pass, but O(n^2) because
+    #### for loop is O(n) and nested lookup of item in deduped_lst is
+    #### also O(n)
+    # deduped_lst = []
+    # for item in items:
+    #     if item not in deduped_lst:
+    #         deduped_lst.append(item)
+
+    # return deduped_lst
+
+    #### Solution 2 - all tests pass,but won't because doesn't maintain order
+    #return list(set(items))
+
+    #### Hackbright Solution ######
+    deduped_lst = []
+    visited = set()
+
+    for item in items:
+        if item not in visited:
+            deduped_lst.append(item)
+            visited.add(item)
+
+    return deduped_lst
 
 
 
