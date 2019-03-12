@@ -943,6 +943,26 @@ def reverse_linked_list(head):
     return out_head
 
 
+###### Reverse a string recursively ######
+
+def rev_string(astring):
+    """Return reverse of string using recursion.
+
+    You may NOT use the reversed() function!
+    >>> rev_string("porcupine")
+    'enipucrop'
+    """
+
+    def _rev_string(astring, rev_string=None):
+
+        if astring:
+            last_letter = astring.pop()
+            astring = astring[:-1]
+            rev_string += last_letter
+        return _rev_string(astring, rev_string)
+
+    return rev_string(astring)
+
 
 
 
