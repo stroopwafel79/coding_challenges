@@ -849,7 +849,7 @@ def remove_node(node):
     node.next = node.next.next
 
 
-######## Reverse Linked Lists #########
+######## Reverse Linked List in place #########
 
 class Node(object):
     """Class in a linked list."""
@@ -911,6 +911,11 @@ def reverse_linked_list(head):
     # head = second_curr
 
     # return head
+
+
+
+#### Reverse Linked List ######
+
 
     ### HB's solution creates a second LL ####
     ### code is more succinct, but it takes up more memory than mine.
