@@ -1037,6 +1037,74 @@ def sort_ab(a, b):
 
     return sorted_lst
 
+####### Split a String #######
+
+def split(astring, splitter):
+    """Split a string by splitter and return list of splits.
+    >>> split("i love balloonicorn", " ")
+    ['i', 'love', 'balloonicorn']
+
+    >>> split("that is which is that which is that", " that ")
+    ['that is which is', 'which is that']
+
+    >>> split("that is which is that which is that", "that")
+    ['', ' is which is ', ' which is ', '']
+
+    >>> split("hello world", "nope")
+    ['hello world']
+    """
+    # loop over indices of astring
+    # Each loop, check if the char in astring is the first char in splitter
+    # if not, move to the next letter in astring
+    # if so, check if the next several letters in astring make up the splitter
+    # if not, move to next letter in astring
+    # if so, append the slice of astring
+
+    split_lst = []
+    start_index = 0
+    i = 0
+
+    while i < len(astring):
+        if astring[i] == splitter[0]:
+            split_test = astring[i: i + len(splitter)]
+            if split_test == splitter:
+                split_lst.append(astring[start_index: i])
+                start_index = (i + len(splitter))
+                i += len(splitter)
+            else:
+                i += 1
+        
+        else:
+            i += 1
+    split_lst.append(astring[start_index:])
+
+    return split_lst
+
+    #### HB Solution ###
+    # def split(astring, splitter):
+    # """Split a string by splitter and return list of splits."""
+
+    # # START SOLUTION
+
+    # out = []
+    # index = 0
+
+    # while index <= len(astring):
+
+    #     curr_index = index
+    #     index = astring.find(splitter, index)
+
+    #     if index != -1:
+    #         out.append(astring[curr_index:index])
+    #         index += len(splitter)
+
+    #     else:
+    #         # couldn't find any more instances of splitter in astring
+    #         out.append(astring[curr_index:])
+    #         break
+
+    # return out
+
 
 
 
