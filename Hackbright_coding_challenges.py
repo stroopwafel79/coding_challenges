@@ -953,18 +953,25 @@ def rev_string(astring):
     'enipucrop'
     """
 
-    def _rev_string(astring, rev_string=None):
+    def _rev_string(astring, rev_string=""):
 
-        if astring:
-            last_letter = astring.pop()
-            astring = astring[:-1]
-            rev_string += last_letter
-        return _rev_string(astring, rev_string)
+        if not astring:
+            return rev_string
 
-    return rev_string(astring)
+        rev_string += astring[-1]
+        return _rev_string(astring[:-1], rev_string)
+
+    return _rev_string(astring)
 
 
+    ### HB Solution ###
+    # if len(astring) < 2:
+    #         return astring
 
+    #     return astring[-1] + rev_string(astring[:-1])
+
+
+        
 
 if __name__ == "__main__":
     import doctest
