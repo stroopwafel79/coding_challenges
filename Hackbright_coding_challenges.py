@@ -971,7 +971,24 @@ def rev_string(astring):
     #     return astring[-1] + rev_string(astring[:-1])
 
 
-        
+########## Show even numbers ##########
+def show_evens(nums):
+    """Given list of ints, return list of *indices* of even numbers in list.
+    >>> lst = [1, 2, 3, 4, 6, 8]
+    >>> show_evens(lst)
+    [1, 3, 4, 5]
+    """
+    even_indices = []
+    for i in range(len(nums)):
+        if nums[i] % 2 == 0:
+            even_indices.append(i)
+
+    return even_indices
+
+    
+
+
+
 
 if __name__ == "__main__":
     import doctest
