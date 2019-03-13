@@ -987,6 +987,64 @@ def show_evens(nums):
 
     
 
+############ Sort Sorted Lists ##########
+
+def sort_ab(a, b):
+    """Given already-sorted lists, `a` and `b`, return sorted list of both.
+
+    You may not use sorted() or .sort().
+    >>> a = [1, 3, 5, 7]
+    >>> b = [2, 6, 8, 10]
+    >>> sort_ab(a, b)
+    [1, 2, 3, 5, 6, 7, 8, 10]
+    """
+
+    # Loop over indicies of first list.
+    # compare value at index of each list.
+    # Append lowest 
+    sorted_lst = []
+
+    while a or b:
+        if a == []:
+            sorted_lst.extend(b)
+            return sorted_lst
+        elif b == []:
+            sorted_lst.extend(a)
+            return sorted_lst
+
+        if a[0] < b[0]:
+            sorted_lst.append(a[0])
+            a = a[1:]
+        else:
+            sorted_lst.append(b[0])
+            b = b[1:]
+
+    ### HB Solution ###
+    # out = []
+
+    # ia = 0  # index into list a
+    # ib = 0  # index into list b
+
+    # while ia < len(a) and ib < len(b):
+    #     # Check current items in both lists:
+    #     #  - if a < b, add a and increase ia
+    #     #  - else      add b and increase ib
+
+    #     if a[ia] < b[ib]:
+    #         out.append(a[ia])
+    #         ia += 1
+
+    #     else:
+    #         out.append(b[ib])
+    #         ib += 1
+
+    # # One list could have things remaining; add any remaining items
+    # out.extend(a[ia:])
+    # out.extend(b[ib:])
+
+    # return out
+
+
 
 
 
