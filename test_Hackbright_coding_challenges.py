@@ -29,7 +29,18 @@ class TestSumRecursively(unittest.TestCase):
         self.assertEqual(sum_list([-5, 10, 4]), 9)
         self.assertEqual(sum_list([20]), 20)
         self.assertEqual(sum_list([]), 0)
-    
+        
+
+class TestFurthest(unittest.TestCase):
+
+    def test_furthest(self):
+        self.assertEqual(furthest(3, [0, 1, 2]), 0)
+        self.assertEqual(furthest(3, [2]), 2)
+        self.assertEqual(furthest(3, [0]), 2)
+        self.assertEqual(furthest(6, [2, 4]), 2)
+        self.assertEqual(furthest(7, [0, 6]), 3)
+
+
 ### Example use of setUp and tearDown ###
 # class WidgetTestCase(unittest.TestCase):
 #     def setUp(self):

@@ -108,7 +108,7 @@ def binary_search(val):
         
     return num_guesses
 
-#########Decode a string
+######### Decode a string ########
 
 # In this challenge, you’ll write a decoder.
 
@@ -152,7 +152,7 @@ def decode(s):
     return new_string
 
 
-#######Leaping Lemur
+####### Leaping Lemur #######
 
 # A lemur wants to jump across a span in the forest on branches. She can 
 # jump 1 or 2 branches at a time. Unfortunately, some of the branches 
@@ -220,7 +220,7 @@ def  lemur(branches):
 
     return jumps
 
-######### Missing Number
+######### Missing Number #########
 # Imagine a list of numbers from 1 to max_num, inclusive – except that 
 # one of these numbers will be missing from the list.
 
@@ -1122,6 +1122,69 @@ def sum_list(nums):
     #     return 0
 
     # return nums[0] + sum_list(nums[1:])
+
+######## Lazy Lemmings #########
+
+def furthest(num_holes, cafes):
+    """ Find the farthest any single lemming needs to travel for food.
+        Lemmings can go backwards and forwards.
+
+    >>> furthest(3, [0, 1, 2])
+    0
+
+    >>> furthest(3, [2])
+    2
+
+    >>> furthest(3, [0])
+    2
+
+    >>> furthest(6, [2, 4])
+    2
+
+    >>> furthest(7, [0, 6])
+    3
+    """
+    # Every hole is a cafe
+    furthest = 0
+    current_hole = 0
+    distance_to_cafe = 0
+
+    if num_holes == len(cafes):
+        return furthest
+
+    while current_hole < num_holes:
+        if current_hole not in cafes:
+            distance_to_cafe += 1
+            if distance_to_cafe > furthest:
+                furthest = distance_to_cafe
+                distance_to_cafe = 0
+
+    return furthest
+
+
+
+
+
+
+
+
+def furthest_optimized:
+    """
+    >>> furthest_optimized(7, [0, 6])
+    3
+
+    >>> furthest_optimized(3, [0, 1, 2])
+    0
+
+    >>> furthest_optimized(3, [2])
+    2
+
+    >>> furthest_optimized(3, [0])
+    2
+
+    >>> furthest_optimized(6, [2, 4])
+    2
+    """
 
 
 if __name__ == "__main__":
