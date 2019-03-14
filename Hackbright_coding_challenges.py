@@ -1117,7 +1117,11 @@ def sum_list(nums):
     return nums[0] + sum_list(nums[1:])
 
 
+    ### HB solution ###
+    # if not nums:
+    #     return 0
 
+    # return nums[0] + sum_list(nums[1:])
 
 
 if __name__ == "__main__":
