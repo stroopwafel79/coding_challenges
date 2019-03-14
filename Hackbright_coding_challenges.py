@@ -1128,6 +1128,7 @@ def sum_list(nums):
 def furthest(num_holes, cafes):
     """ Find the farthest any single lemming needs to travel for food.
         Lemmings can go backwards and forwards.
+        Lemmings cannot loop around from last hole to the first
 
     >>> furthest(3, [0, 1, 2])
     0
