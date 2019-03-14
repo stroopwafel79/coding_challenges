@@ -30,6 +30,13 @@ class TestSumRecursively(unittest.TestCase):
         self.assertEqual(sum_list([20]), 20)
         self.assertEqual(sum_list([]), 0)
     
+### Example use of setUp and tearDown ###
+# class WidgetTestCase(unittest.TestCase):
+#     def setUp(self):
+#         self.widget = Widget('The widget')
+
+#     def tearDown(self):
+#         self.widget.dispose()
 
 if __name__ == '__main__':
 
