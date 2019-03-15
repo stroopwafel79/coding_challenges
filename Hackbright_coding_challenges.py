@@ -1159,9 +1159,17 @@ def furthest(num_holes, cafes):
             if distance_to_cafe > furthest:
                 furthest = distance_to_cafe
                 distance_to_cafe = 0
+        current_hole += 1
 
     return furthest
 
+    #### solution attempt # 2
+    for i in range(num_holes):
+        for j in range(len(cafes)):
+            if i < cafes[j]:
+                distance = cafes[j] - i
+                if distance > furthest:
+                    furthest = distance
 
 
 
@@ -1169,7 +1177,8 @@ def furthest(num_holes, cafes):
 
 
 
-def furthest_optimized:
+
+def furthest_optimized(num_holes, cafes):
     """
     >>> furthest_optimized(7, [0, 6])
     3
@@ -1186,6 +1195,7 @@ def furthest_optimized:
     >>> furthest_optimized(6, [2, 4])
     2
     """
+    pass
 
 
 if __name__ == "__main__":
