@@ -1129,22 +1129,22 @@ def furthest(num_holes, cafes):
     """ Find the farthest any single lemming needs to travel for food.
         Lemmings can go backwards and forwards.
         Lemmings cannot loop around from last hole to the first
-
-    >>> furthest(3, [0, 1, 2])
-    0
-
-    >>> furthest(3, [2])
-    2
-
-    >>> furthest(3, [0])
-    2
-
-    >>> furthest(6, [2, 4])
-    2
-
-    >>> furthest(7, [0, 6])
-    3
     """
+    # >>> furthest(3, [0, 1, 2])
+    # 0
+
+    # >>> furthest(3, [2])
+    # 2
+
+    # >>> furthest(3, [0])
+    # 2
+
+    # >>> furthest(6, [2, 4])
+    # 2
+
+    # >>> furthest(7, [0, 6])
+    # 3
+    
     # Every hole is a cafe
     furthest = 0
     current_hole = 0
@@ -1172,29 +1172,23 @@ def furthest(num_holes, cafes):
                     furthest = distance
 
 
-
-
-
-
-
-
 def furthest_optimized(num_holes, cafes):
-    """
-    >>> furthest_optimized(7, [0, 6])
-    3
+    
+    # >>> furthest_optimized(7, [0, 6])
+    # 3
 
-    >>> furthest_optimized(3, [0, 1, 2])
-    0
+    # >>> furthest_optimized(3, [0, 1, 2])
+    # 0
 
-    >>> furthest_optimized(3, [2])
-    2
+    # >>> furthest_optimized(3, [2])
+    # 2
 
-    >>> furthest_optimized(3, [0])
-    2
+    # >>> furthest_optimized(3, [0])
+    # 2
 
-    >>> furthest_optimized(6, [2, 4])
-    2
-    """
+    # >>> furthest_optimized(6, [2, 4])
+    # 2
+    
     pass
 
 
@@ -1261,6 +1255,51 @@ def create_set(lst):
 # The second line contains a single string , of  characters that describe his path.
 
 def countingValleys(n, s):
+
+    sea_level = 0
+    num_valleys = 0
+    current = 0
+
+    for step in s:
+        if step == D:
+            current += 1
+        else:
+            current -= 1
+
+    pass
+
+
+##### Check if parentheses are balanced #########
+
+def is_balanced(string):
+    """" Check if the parens in an equation are balanced 
+    >>> is_balanced("{[]{()}}")
+    True
+    >>> is_balanced("[{}{}(]")
+    False
+    >>> is_balanced("(a+b)-(3*4))")
+    False
+    """
+    parens_stack = []
+
+    for char in string:
+        if char == "(":
+            parens_stack.append(char)
+
+        if char == ")":
+            if parens_stack:
+                parens_stack.pop()
+            else:
+                return False
+
+    if not parens_stack:
+        return True
+    else:
+        return False
+
+        # if it's a closing parens:
+            # if parens_stack empty, return false
+
 
 
 if __name__ == "__main__":
