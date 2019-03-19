@@ -1198,6 +1198,37 @@ def furthest_optimized(num_holes, cafes):
     pass
 
 
+
+
+#### Create a set #####
+
+def create_set(lst):
+
+    """
+    """
+
+    # in: [1, 1, 3, 4, 4, 4]
+    # out: {1, 3, 4}
+
+    no_duplicates = [lst[0]]
+    # [1, 3, 4]
+
+    new_set = {}
+
+    for num in lst:
+        new_set[num] = new_set.get(num, None)
+
+    #     if num not in no_duplicates:
+    #         no_duplicates.append(num)
+
+    # for num in no_duplicates:
+    #     new_set[num] = None
+
+    return new_set
+
+print(create_set([1, 1, 3, 4, 4, 4]))
+
+
 if __name__ == "__main__":
     import doctest
     
