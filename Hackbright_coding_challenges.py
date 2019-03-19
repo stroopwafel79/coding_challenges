@@ -1292,7 +1292,7 @@ def is_balanced(string):
             else:
                 return False
 
-    if not parens_stack:
+    if len(parens_stack) == 0:
         return True
     else:
         return False
