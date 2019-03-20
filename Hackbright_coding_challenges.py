@@ -1300,6 +1300,17 @@ def is_balanced(string):
         # if it's a closing parens:
             # if parens_stack empty, return false
 
+####### Generate Minesweeper board ########
+
+# > width = 8
+# > height = 4
+# > number_of_mines = 8
+# > generate_board(width, height, number_of_mines)
+# *112*100
+# 123*3222
+# 01**31**
+# 013*2122
+
 
 
 if __name__ == "__main__":
