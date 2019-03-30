@@ -139,6 +139,20 @@ class BinarySearchTree:
 			print(curr_node.data)
 
 
+	def search(self, value):
+	
+		if value == self.root.data:
+			return True
+
+		left_tree = self._search(value, self.root.left_child)
+		right_tree = self._search(value, self.root.right_child)
+
+		return (left_tree or right_tree)
+
+	def _search(self, value, curr_node):
+		pass
+
+
 tree = BinarySearchTree()
 tree.insert(6)
 tree.insert(3)
