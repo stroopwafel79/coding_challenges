@@ -90,6 +90,18 @@ class BinarySearchTree:
 			print("Data already in tree!")
 
 
+	def print_tree(self):
+		""" Print tree using in-order tree traversal """
+		if self.root != None:
+			self._print_tree(self.root)
+
+	def _print_tree(self, curr_node):
+		if curr_node != None:
+			self._print_tree(curr_node.left_child)
+			print(curr_node.data)
+			self._print_tree(curr_node.right_child)
+
+
 tree = BinarySearchTree()
 tree.insert(6)
 tree.insert(3)
@@ -97,7 +109,7 @@ tree.insert(7)
 tree.insert(1)
 tree.insert(45)
 
-print(tree)
+tree.print_tree()
 
 
 
