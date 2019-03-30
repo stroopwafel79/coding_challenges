@@ -90,16 +90,36 @@ class BinarySearchTree:
 			print("Data already in tree!")
 
 
-	def print_tree(self):
-		""" Print tree using in-order tree traversal """
+	def print_tree_in_order(self):
+		""" Print tree using in-order tree traversal 
+		1. Visit all the nodes in the left subtree
+		2. Then the root node
+		3. Visit all the nodes in the right subtree
+		"""
 		if self.root != None:
-			self._print_tree(self.root)
+			self._print_tree_in_order(self.root)
 
-	def _print_tree(self, curr_node):
+	def _print_tree_in_order(self, curr_node):
 		if curr_node != None:
-			self._print_tree(curr_node.left_child)
+			self._print_tree_in_order(curr_node.left_child)
 			print(curr_node.data)
-			self._print_tree(curr_node.right_child)
+			self._print_tree_in_order(curr_node.right_child)
+
+	def print_pre_order(self):
+		""" Print tree using pre-order traversal 
+		1. Visit root node
+		2. Visit all the nodes in the left subtree
+		3. Visit all the nodes in the right subtree
+		"""
+
+
+	def print_post_order(self):
+		""" Print tree using post-order traversal 
+		1. visit all the nodes in the left subtree
+		2. visit all the nodes in the right subtree
+		3. visit the root node
+		"""
+
 
 
 tree = BinarySearchTree()
