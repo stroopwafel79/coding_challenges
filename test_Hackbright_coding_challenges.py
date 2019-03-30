@@ -1,6 +1,6 @@
 import unittest
 from Hackbright_coding_challenges import (make_dict, is_anagram_of_palindrome,
-                                          count_recursively, sum_list)
+                                          count_recursively, sum_list, two_sum)
 
 
 class TestMakeDict(unittest.TestCase):
@@ -39,6 +39,11 @@ class TestFurthest(unittest.TestCase):
         self.assertEqual(furthest(3, [0]), 2)
         self.assertEqual(furthest(6, [2, 4]), 2)
         self.assertEqual(furthest(7, [0, 6]), 3)
+
+class TestTwoSum(unittest.TestCase):
+
+    def test_two_sum(self):
+        self.assertEqual(two_sum([3, 5, 2, -4, 8, 11], 7), [[2, 5], [11, -4]])
 
 
 ### Example use of setUp and tearDown ###

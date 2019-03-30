@@ -1312,6 +1312,27 @@ def is_balanced(string):
 # 013*2122
 
 
+############## Two Sum ################
+
+def two_sum(lst, sum):
+    """ Given a lst and a number (sum), return a list of lists of pair
+        in the lst that add up to the sum
+    """
+    result = []
+    set_lst = set()
+
+
+    for i in range(len(lst)):
+        sum_minus_elem = sum - lst[i]
+
+        if sum_minus_elem in set_lst:
+            result.append([lst[i], sum_minus_elem])
+
+        else: 
+            set_lst.add(lst[i])
+
+    return result
+
 
 if __name__ == "__main__":
     import doctest
