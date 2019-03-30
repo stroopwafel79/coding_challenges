@@ -61,15 +61,46 @@ class BinarySearchTree:
 	def __init__(self, root=None):
 		self.root = root
 
+	def __repr__(self):
+		return "<Binary Search Tree root: {}".format(self.root.data)
 
-	def insert_node(self, data):
+
+	def insert(self, data):
 		# if no root make it this node
 		if self.root == None:
 			self.root = Node(data)
 
-		# if there is a root check if data is > or < root.data
-		elif data < self.root.data:
-			
+		else:
+			self._insert(data, self.root)
+
+	def _insert(self, data, curr_node):
+		if data < curr_node.data:
+			if curr_node.left_child == None:
+				curr_node.left_child = Node(data)
+			else:
+				self._insert(data, curr_node.left_child)
+
+		elif data > curr_node.data:
+			if curr_node.right_child == None:
+				curr_node.right_child = Node(data)
+			else:
+				self._insert(data, curr_node.right_child)
+
+		else:
+			print("Data already in tree!")
+
+
+tree = BinarySearchTree()
+tree.insert(6)
+tree.insert(3)
+tree.insert(7)
+tree.insert(1)
+tree.insert(45)
+
+print(tree)
+
+
+
 
 
 
