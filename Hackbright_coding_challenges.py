@@ -1,4 +1,5 @@
 import math
+from random import sample
 
 #############Is the word an anagram of a palindrome?
 # A palindrome is a word that reads the same forward and backwards 
@@ -1314,6 +1315,10 @@ def is_balanced(string):
 def generate_board(width, height, num_mines):
     board = [[0] * width for i in range(height)]
 
+    mines = get_random_mine_positions(width, height, num_mines)
+    #print(mines) # [[0, 1], [2, 0], [0, 3]]
+    add_mines(board, mines)
+
     return board
 
 
@@ -1321,8 +1326,28 @@ def print_board(board):
     for row in board:
         print(row)
 
+
+def get_random_mine_positions(width, height, num_mines):
+
+    # get coordinates for all positions in the board
+    coords = [[x, y] for x in range(height) for y in range(width)]
+    # randomly choose coordinates that have mines
+    mine_positions = sample(coords, num_mines) #[[2, 1], [1, 2], [0, 2]]
+    
+    return mine_positions
+
+def add_mines(board, mine_positions):
+
+    for mine_coord in mine_positions:
+        row, col = mine_coord
+
+        board[row][col] = "*"
+
+    return board
+
 board = generate_board(3, 4, 3)
 print_board(board)
+
 
 ############## Two Sum ################
 
