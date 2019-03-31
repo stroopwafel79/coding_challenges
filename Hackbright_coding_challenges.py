@@ -1311,6 +1311,18 @@ def is_balanced(string):
 # 01**31**
 # 013*2122
 
+def generate_board(width, height, num_mines):
+    board = [[0] * width for i in range(height)]
+
+    return board
+
+
+def print_board(board):
+    for row in board:
+        print(row)
+
+board = generate_board(3, 4, 3)
+print_board(board)
 
 ############## Two Sum ################
 
