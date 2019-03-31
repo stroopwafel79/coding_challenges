@@ -1313,21 +1313,29 @@ def is_balanced(string):
 # 013*2122
 
 def generate_board(width, height, num_mines):
+    """ Generate a 2d array with mines randomly placed and a number
+        in each non-bomb position indicating the number of bombs
+        that surround it.
+    """
     board = [[0] * width for i in range(height)]
 
     mines = get_random_mine_positions(width, height, num_mines)
     #print(mines) # [[0, 1], [2, 0], [0, 3]]
-    add_mines(board, mines)
+    add_mines_nums(board, mines, height, width)
+
+
 
     return board
 
 
 def print_board(board):
+    """ Print board (2d array) with each inner array on a new line """
     for row in board:
         print(row)
 
 
 def get_random_mine_positions(width, height, num_mines):
+    """ Return a list of random coordinates in which to add a mine """
 
     # get coordinates for all positions in the board
     coords = [[x, y] for x in range(height) for y in range(width)]
@@ -1336,14 +1344,28 @@ def get_random_mine_positions(width, height, num_mines):
     
     return mine_positions
 
-def add_mines(board, mine_positions):
+
+def add_mines_nums(board, mine_positions, height, width):
+    """ Add mines to board based on random coordinates for mines. """
 
     for mine_coord in mine_positions:
         row, col = mine_coord
 
         board[row][col] = "*"
 
+        # cells surrounding the bomb
+        row_range = range(row - 1, row + 2)
+        col_range = range(col - 1, col + 2)
+
+        # move through surrounding cells and add 1
+        # for each cell that isn't a bomb
+        for i in row_range:
+            for j in col_range:
+                if (0 <= i < height) and (0 <= j < width) and (board[i][j] != "*"):
+                    board[i][j] += 1
+
     return board
+
 
 board = generate_board(3, 4, 3)
 print_board(board)
