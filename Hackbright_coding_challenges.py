@@ -332,7 +332,7 @@ def check_for_anagrams_in_list(ref_word, word_list):
     return anagram_list
 
 
-####### Given a DNA strand, return it's compliment
+####### Given a DNA strand, return it's compliment ##########
 
 def get_dna_compliment(dna):
     """ (str) -> str
@@ -345,20 +345,13 @@ def get_dna_compliment(dna):
     """
     # create a new string that starts empty
     # loop over each letter in the string
-    # use conditional logic to add compliment 
-    # to new string
+    # Use dictionary of compliment values 
     dna = dna.upper()
     dna_compliment = ''
+    compliment = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'} 
 
     for letter in dna:
-        if letter == 'A':
-            dna_compliment += 'T'
-        elif letter == 'T':
-            dna_compliment += 'A'
-        elif letter == 'C':
-            dna_compliment += 'G'
-        else:
-            dna_compliment += 'C'
+        dna_compliment += compliment[letter]
 
     return dna_compliment
 
@@ -1411,6 +1404,8 @@ def two_sum(lst, sum):
             set_lst.add(lst[i])
 
     return result
+
+
 
 
 if __name__ == "__main__":
