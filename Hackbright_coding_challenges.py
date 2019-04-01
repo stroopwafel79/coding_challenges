@@ -290,10 +290,8 @@ def missing_number(lst, max_num):
 
 
 
-########### Hacker Rank Problem ############
+########### Hacker Rank Problem - Anagrams in List ############
 #Given an word and a list. Find all anagrams of the word in the dictionary
-word = "madam"
-lst = ["set", "this", "aadmm", "oolrs"]
 
 def hash_word(word):
     dict_out = {}
@@ -309,11 +307,13 @@ def hash_word(word):
 def are_keys_equal(dict1, dict2):
     """ Deterimine if the keys in two different dictionaries are equal """
 
-    for key in d1.keys():
-        if key not in d2:
+    for key in dict1.keys():
+        if key not in dict2:
             return False
-        if d1[key] != d2[key]:
+        if dict1[key] != dict2[key]:
             return False
+
+    return True
 
 
 def is_anagram(word1, word2):
@@ -334,10 +334,18 @@ def is_anagram(word1, word2):
 
 
 def check_for_anagrams_in_list(ref_word, word_list):
+    """ Return list of words from word_list that are anagrams of ref_word
+    >>> check_for_anagrams_in_list("madam", ["set", "this", "aadmm", "oolrs"])
+    ['aadmm']
+    >>> check_for_anagrams_in_list("to", ["set", "ot", "too", "to"])
+    ['ot', 'to']
+    """
     anagram_list = []
     for word in word_list:
+        #print(is_anagram(ref_word, word))
         if is_anagram(ref_word, word):
-            anagram_list.apend(word)
+
+            anagram_list.append(word)
     return anagram_list
 
 
