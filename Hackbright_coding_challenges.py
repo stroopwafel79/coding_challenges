@@ -432,15 +432,6 @@ def segment_message(message):
     return string_array
 
 
-######### Checkr Technical Screen ####Our live coding session consists 
-# of a name matching exercise 
-# that is the foundation of your success at Checkr. We found out quickly 
-# this is a great indicator for future performance and success on the job. 
-# The challenge will consist of verifying names in a given list. You will 
-# have a few test cases to test your solution against and one bonus 
-# transposition question.
-
-
 ### two names match if they're 2 letters off or less
 def make_letter_freq_dict(name):
     letter_freq_dict = {}
