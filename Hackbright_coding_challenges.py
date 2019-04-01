@@ -303,19 +303,6 @@ def hash_word(word):
         dict_out[letter] = dict_out.get(letter, 0) + 1
     return dict_out
 
-
-def are_keys_equal(dict1, dict2):
-    """ Deterimine if the keys in two different dictionaries are equal """
-
-    for key in dict1.keys():
-        if key not in dict2:
-            return False
-        if dict1[key] != dict2[key]:
-            return False
-
-    return True
-
-
 def is_anagram(word1, word2):
 
     # word lengths must be the same to be an anagram
@@ -325,12 +312,8 @@ def is_anagram(word1, word2):
     # make a letter frequency dictionary of each word
     d1 = hash_word(word1)
     d2 = hash_word(word2)
-    
-    # dictionary lengths mush be the same to be anagrams
-    if len(d1) != len(d2):
-        return False
 
-    return are_keys_equal(d1, d2)
+    return d1 == d2
 
 
 def check_for_anagrams_in_list(ref_word, word_list):
