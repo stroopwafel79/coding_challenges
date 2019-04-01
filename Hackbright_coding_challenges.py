@@ -94,7 +94,7 @@ def binary_search(val):
     guess = None
 
     while val != guess:
-        guess = int((too_high - too_low) / 2) + too_low
+        guess = (too_high - too_low) // 2 + too_low
         num_guesses += 1
 
 
