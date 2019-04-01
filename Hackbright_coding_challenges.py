@@ -471,7 +471,7 @@ def is_close_match(name1, name2):
             
     return len(name1_missing_letters) <= 2 and len(name2_missing_letters) <= 2
         
-####### Make a game board
+####### Make tic-tac-toe ##########
 
 # Board as array of arrays 
 # Ex: [1, 1, 1, 1, 1],
@@ -483,32 +483,45 @@ def is_close_match(name1, name2):
 # to create board:
 
 
-# class TicTacToeBoard:
+class TicTacToeBoard:
 
-#     def __init__(self):
-#         self.cells = [[0] * 3 for n in range(3)]
+    def __init__(self):
+        self.board = [[0] * 3 for n in range(3)]
+        game_won = False
         
-#     def print_board(self):
-#         for row in self.cells:
-#             print(row)
+    def print_board(self):
+        for row in self.cells:
+            print(row)
             
-#     def move_piece(self, player, x_axis, y_axis):
+    def move_piece(self, player, row, col):
         
-#         # move piece to specified location
-#         if self.player == "X"
-#             self.cells[y_axis][x_axis] = "X"
-#         else:
-#             self.cells[y_axis][x_axis] = "O"
+        # move piece to specified location
 
-
+        #check if location is open
+        assert self.board[row][col] == 0, "Cell is not open, try again"
+        assert row < 3 and col < 3, "Cell is off the board, try again"
 
         
+        # update cell
+        self.board[row][col] = player
+
+        self.game_won = is_winner()
+
+
+    def is_winner(self):
+
+       
 #         # move piece to specified location
 #         # check if win
 #         # check if board is full
 #         # print board
 
-# tic = TicTacToeBoard()
+tic = TicTacToeBoard()
+while not tic.game_won:
+    player = input("What player are you? \n")
+    row = input("What row?")
+    col = input("What column?")
+    tic.move_piece(player, row, col)
 # tic.print_board()
 
 
