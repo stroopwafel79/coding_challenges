@@ -279,7 +279,14 @@ def missing_number(lst, max_num):
 # O(n log n) in runtime, it is O(1) in “runspace”—it uses the same amount 
 # of memory no matter how big n is)
 
-# 
+    # lst.sort() # sorts list in place so no additional memory used.
+    # i = 0
+
+    # while i < (len(lst)):
+    #     if lst[i] != i + 1:
+    #         return i + 1
+
+    #     i += 1
 
 
 
