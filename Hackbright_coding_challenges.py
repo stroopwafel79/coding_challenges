@@ -44,11 +44,8 @@ def is_anagram_of_palindrome(s):
     for value in d.values():
         if value % 2 != 0:
             num_odd +=1
-    
-    if num_odd > 1:
-        return False
-    
-    return True
+        
+    return num_odd < 2
 
 #########Count List Recursively
 
