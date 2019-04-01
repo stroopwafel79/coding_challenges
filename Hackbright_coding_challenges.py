@@ -47,7 +47,7 @@ def is_anagram_of_palindrome(s):
         
     return num_odd < 2
 
-#########Count List Recursively
+######### Count List Recursively ############
 
 def count_recursively(lst):
     """Return number of items in a list, using recursion.
@@ -59,7 +59,7 @@ def count_recursively(lst):
     3
     """
 
-    if lst == []:
+    if not lst:
         return 0
     
     lst.pop()
