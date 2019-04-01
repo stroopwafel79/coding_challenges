@@ -90,7 +90,7 @@ def binary_search(val):
     num_guesses = 0
 
     too_low = 0
-    too_high = 100
+    too_high = 101
     guess = None
 
     while val != guess:
@@ -142,10 +142,7 @@ def decode(s):
 
     for i in range(len(s)):
         if s[i].isdigit():
-            # print("s[i]", s[i])
-            # print("s[int(s[i]) + 1]", s[int(s[i]) + 1])
             new_string += s[int(s[i]) + i + 1]
-            #print("new_string:", new_string)
 
     return new_string
 
@@ -217,6 +214,27 @@ def  lemur(branches):
             i += 1
 
     return jumps
+
+## HB Solution ##
+# def  lemur(branches):
+#     """Return number of jumps needed."""
+
+#     assert branches[0] == 0, "First branch must be alive"
+#     assert branches[-1] == 0, "Last branch must be alive"
+
+#     # START SOLUTION
+
+#     at = 0
+#     n_jumps = 0
+
+#     while at < len(branches) - 1:
+#         at += 2
+#         if at >= len(branches) or branches[at] == 1:
+#             # We can jump this far, so only jump 1
+#             at -= 1
+#         n_jumps += 1
+
+#     return n_jumps
 
 ######### Missing Number #########
 # Imagine a list of numbers from 1 to max_num, inclusive – except that 
